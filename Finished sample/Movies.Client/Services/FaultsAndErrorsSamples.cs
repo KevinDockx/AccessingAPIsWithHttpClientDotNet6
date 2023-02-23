@@ -105,7 +105,7 @@ public class FaultsAndErrorsSamples : IIntegrationService
                         // read out the response body and log it to the console window
                         var errorStream = await response.Content.ReadAsStreamAsync();
 
-                        var errorAsProblemDetails = await JsonSerializer.DeserializeAsync<ValidationProblemDetails>(
+                        var errorAsProblemDetails = await JsonSerializer.DeserializeAsync<ExtendedProblemDetailsWithErrors>(
                         errorStream, 
                         _jsonSerializerOptionsWrapper.Options);
 
